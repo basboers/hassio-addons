@@ -98,6 +98,17 @@ For a list of available TTS integration please see [Hassio integrations][tts_int
 
 ## Example config for some VoIP providers
 
+### A ClearVox Nexxt VoIP PBX
+
+sip_parameters:
+  caller_id_uri: 'sip:username@hostname'
+  sip_server_uri: 'sip:username@hostname'
+  username: username
+  password: password
+pjsua_custom_options: >-
+  --no-tcp --srtp-secure=0 --use-srtp=0 --proxy=sip:hostname:5060;lr
+  --no-vad --add-codec=PCMA/8000
+
 ### A Fritz!Box with VoIP PBX
 ```yaml
 sip_parameters:
